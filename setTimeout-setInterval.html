@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval & setTimeout</title>
+</head>
+
+<body>
+
+    <input type="button" value="Set Interval" onclick="setIntervals()">
+    <input type="button" value="Stop Interval" onclick="stopIntervals()">
+    <input type="button" value="Set Timeout" onclick="setTimeouts()">
+    <input type="button" value="stop Timeout" onclick="stopTimeouts()">
+
+    <hr>
+    <div id="interval"></div>
+    <hr>
+    <div id="timeout"></div>
+
+
+    <script>
+        const interval = document.getElementById('interval');
+        const timeout = document.getElementById('timeout');
+        var inTT, tmO;
+
+        ///////// Set Interval  function (Repeat after millisecond)///////////
+        function setIntervals() {
+            InTT = setInterval(function() {
+                interval.innerHTML = new Date().toLocaleTimeString();
+            }, 1000);
+        }
+        ///////// stop Interval  of particular instance///////////
+        function stopIntervals() {
+            clearInterval(InTT);
+        }
+
+        ///////// setTimeout  function (start after millisecond)///////////
+        function setTimeouts() {
+            tmO = setTimeout(function() {
+                timeout.innerHTML = "Hello 4 second";
+            }, 4000);
+        }
+        ///////// stop Interval  of particular instance///////////
+        function stopTimeouts() {
+            clearTimeout(tmO);
+
+        }
+    </script>
+
+</body>
+
+</html>
